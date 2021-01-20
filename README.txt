@@ -1,0 +1,1 @@
+"Quick" javafx project for school

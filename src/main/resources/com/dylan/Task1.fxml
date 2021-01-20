@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dylan.Task1">
+   <children>
+      <Text layoutX="78.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Array Info">
+         <font>
+            <Font name="Comic Sans MS" size="50.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="entries" layoutX="139.0" layoutY="70.0" onAction="#add" />
+      <JFXButton layoutX="139.0" layoutY="102.0" onAction="#add" text="Add" />
+      <JFXButton layoutX="231.0" layoutY="102.0" onAction="#clear" text="Clear" />
+      <Separator layoutX="1.0" layoutY="188.0" prefHeight="25.0" prefWidth="400.0" />
+      <Text fx:id="outMin" layoutX="10.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="75.0" />
+      <Text fx:id="showArrays" layoutX="1.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="400.0" />
+      <JFXButton layoutX="6.0" layoutY="361.0" onAction="#back" text="Back" />
+      <Text layoutX="10.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min" textAlignment="CENTER" wrappingWidth="75.0" />
+      <Text fx:id="outAvg" layoutX="164.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="75.0" />
+      <Text layoutX="164.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mean" textAlignment="CENTER" wrappingWidth="75.0" />
+      <Text fx:id="outMax" layoutX="307.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="75.0" />
+      <Text layoutX="307.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max" textAlignment="CENTER" wrappingWidth="75.0" />
+      <Text fx:id="oddEven" layoutX="169.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="75.0" />
+      <Text layoutX="169.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Odd/Even" textAlignment="CENTER" wrappingWidth="75.0" />
+   </children>
+</AnchorPane>

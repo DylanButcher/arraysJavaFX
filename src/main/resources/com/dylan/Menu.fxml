@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dylan.Menu">
+   <children>
+      <Text layoutX="45.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrays Tasks">
+         <font>
+            <Font name="Comic Sans MS" size="50.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="175.0" layoutY="115.0" onAction="#goTask1" prefHeight="30.0" prefWidth="50.0" text="Task 1" />
+      <JFXButton layoutX="175.0" layoutY="160.0" onAction="#goTask2" prefHeight="30.0" prefWidth="50.0" text="Task 2" />
+      <JFXToggleButton fx:id="radio" layoutX="284.0" layoutY="328.0" onAction="#musicToggle" text="Music" />
+      <JFXButton layoutX="14.0" layoutY="357.0" onAction="#brexit" text="Exit" />
+      <JFXButton layoutX="175.0" layoutY="200.0" onAction="#goTask3" prefHeight="30.0" prefWidth="50.0" text="Task 3" />
+   </children>
+</AnchorPane>
