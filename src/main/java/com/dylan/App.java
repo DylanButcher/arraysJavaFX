@@ -15,6 +15,7 @@ import java.io.IOException;
 
 public class App extends Application {
 
+    static Stage stage;
      static MediaPlayer mediaPlayer;
     private static Scene scene;
 
@@ -25,6 +26,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        App.stage = stage;
         scene = new Scene(loadFXML("Menu"), 400, 400);
         stage.setResizable(false);
         startMusic();

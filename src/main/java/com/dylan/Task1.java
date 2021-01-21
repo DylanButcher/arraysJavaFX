@@ -6,7 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.FileChooser;
 
+import java.io.*;
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -28,6 +30,25 @@ public class Task1 {
     public ArrayList<Integer> list = new ArrayList<>();
 
     @FXML
+    public void addFile(){
+        FileChooser fc = new FileChooser();
+        File file = fc.showOpenDialog(App.stage);
+        try {
+            list.clear();
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String[] line = reader.readLine().split(",");
+            for (String x:line) {
+                list.add(Integer.parseInt(x));
+            }
+            showArrays.setText(list.toString());
+            showArrays.setTextAlignment(TextAlignment.CENTER);
+            calculateNew();
+        } catch (Exception ex) {
+            App.showAlert(Alert.AlertType.ERROR, "You've encountered an Error", "Error importing file", "Only allows text files with values seperated by commas");
+        }
+    }
+
+    @FXML
     public void add(ActionEvent ae) {
         try {
             list.add(Integer.valueOf(entries.getText()));
@@ -36,8 +57,17 @@ public class Task1 {
             showArrays.setText(list.toString());
             showArrays.setTextAlignment(TextAlignment.CENTER);
         } catch (Exception ex) {
-            entries.clear();
-            App.showAlert(Alert.AlertType.ERROR, "You've encountered an Error", "Error adding value to array", "Entry not valid, please only enter integers");
+            if(entries.getText().equals("Poggers")){
+                try {
+                    App.setRoot("Task3");
+                } catch (IOException e) {
+                    System.out.println("Not Pog");
+                }
+            }else{
+                entries.clear();
+                App.showAlert(Alert.AlertType.ERROR, "You've encountered an Error", "Error adding value to array", "Entry not valid, please only enter integers");
+
+            }
         }
     }
 

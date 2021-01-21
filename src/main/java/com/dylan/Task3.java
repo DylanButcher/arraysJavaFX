@@ -11,26 +11,18 @@ public class Task3 {
 
     @FXML
     MediaView video;
-    @FXML
-    JFXToggleButton videoToggle;
 
 
     public void initialize() {
         App.controlMusic(false);
         mp = new MediaPlayer(App.getMedia("dance.mp4"));
         video.setMediaPlayer(mp);
+        mp.setAutoPlay(true);
     }
 
-    public void playPause(){
-        if(videoToggle.isSelected()){
-            mp.play();
-        }else{
-            mp.pause();
-        }
-    }
 
     public void back() throws Exception{
-        App.controlMusic(!App.mediaPlayer.isMute());
+        mp.pause();
         App.setRoot("Menu");
     }
 }

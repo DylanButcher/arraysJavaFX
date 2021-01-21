@@ -17,6 +17,5 @@
       <JFXButton layoutX="175.0" layoutY="160.0" onAction="#goTask2" prefHeight="30.0" prefWidth="50.0" text="Task 2" />
       <JFXToggleButton fx:id="radio" layoutX="284.0" layoutY="328.0" onAction="#musicToggle" text="Music" />
       <JFXButton layoutX="14.0" layoutY="357.0" onAction="#brexit" text="Exit" />
-      <JFXButton layoutX="175.0" layoutY="200.0" onAction="#goTask3" prefHeight="30.0" prefWidth="50.0" text="Task 3" />
    </children>
 </AnchorPane>
