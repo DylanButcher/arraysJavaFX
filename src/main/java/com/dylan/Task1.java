@@ -8,6 +8,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.*;
@@ -46,6 +47,24 @@ public class Task1 {
         } catch (Exception ex) {
             App.showAlert(Alert.AlertType.ERROR, "You've encountered an Error", "Error importing file", "Only allows text files with values seperated by commas");
         }
+    }
+
+    @FXML
+    public void saveToFile(){
+        FileChooser fc = new FileChooser();
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("TEXT FILES", ".txt");
+        fc.getExtensionFilters().add(filter);
+        File saveTo = fc.showSaveDialog(App.stage);
+        if(saveTo!=null){
+            try{
+                BufferedWriter writer = new BufferedWriter(new FileWriter(saveTo.toString(),false));
+                writer.write(list.toString().substring(1,list.toString().length()-1).replaceAll("\\s+",""));
+                writer.close();
+            }catch (IOException ex){
+                App.showAlert(Alert.AlertType.ERROR, "You've encountered an Error", "Error exporting file", "Could not save file");
+            }
+        }
+
     }
 
     @FXML

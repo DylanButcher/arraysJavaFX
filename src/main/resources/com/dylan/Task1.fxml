@@ -26,8 +26,9 @@
       <Text fx:id="outAvg" layoutX="164.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="75.0" />
       <Text layoutX="307.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max" textAlignment="CENTER" wrappingWidth="75.0" />
       <Text fx:id="outMax" layoutX="307.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="75.0" />
-      <Text layoutX="169.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Odd/Even" textAlignment="CENTER" wrappingWidth="75.0" />
-      <Text fx:id="oddEven" layoutX="169.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="75.0" />
+      <Text layoutX="163.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Odd/Even" textAlignment="CENTER" wrappingWidth="75.0" />
+      <Text fx:id="oddEven" layoutX="163.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="75.0" />
       <JFXButton layoutX="180.0" layoutY="102.0" onAction="#addFile" text="Import" />
+      <JFXButton layoutX="345.0" layoutY="361.0" onAction="#saveToFile" text="Save" />
    </children>
 </AnchorPane>
