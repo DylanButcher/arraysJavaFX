@@ -25,11 +25,6 @@ public class Menu {
         App.setRoot("Task2");
     }
 
-    public void goTask3() throws Exception {
-        App.setRoot("Task3");
-    }
-
-
     @FXML
     public void brexit() {
         System.exit(0);

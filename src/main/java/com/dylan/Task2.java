@@ -29,8 +29,6 @@ public class Task2 {
         this.getRandArray();
     }
 
-
-
     @FXML
     public void checkInArr(ActionEvent ae) {
         String outputMsg = "";
