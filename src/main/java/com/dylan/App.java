@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 
+import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -26,6 +27,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        stage.getIcons().add(new Image(App.class.getResourceAsStream("icon.png")));
+        stage.setTitle("Array Tasks");
         App.stage = stage;
         scene = new Scene(loadFXML("Menu"), 400, 400);
         stage.setResizable(false);
