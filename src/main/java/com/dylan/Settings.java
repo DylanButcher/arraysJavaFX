@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXColorPicker;
 import com.jfoenix.controls.JFXToggleButton;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 
 public class Settings {
 
@@ -16,8 +17,9 @@ public class Settings {
     JFXToggleButton radio = new JFXToggleButton();
 
     public void initialize() {
-        selectRadio();
+        colourWheel.setValue(Color.valueOf(App.backgroundColour));
         background.setStyle(App.getBackgroundColour());
+        selectRadio();
     }
 
     public void selectRadio() {
@@ -28,7 +30,7 @@ public class Settings {
     @FXML
     public void changeColour() {
         App.backgroundColour = "#" + colourWheel.getValue().toString().substring(2);
-        background.setStyle("-fx-background-color: " + App.backgroundColour);
+        background.setStyle(App.getBackgroundColour());
     }
 
     @FXML

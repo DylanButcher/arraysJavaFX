@@ -1,14 +1,21 @@
 package com.dylan;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.util.Duration;
+
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class Task2 {
 
@@ -22,11 +29,14 @@ public class Task2 {
     Text guessed;
     @FXML
     AnchorPane background;
+    @FXML
+    Text time;
 
 
     public ArrayList<Integer> arrToGuess = new ArrayList<>();
     public ArrayList<Integer> arrTried = new ArrayList<>();
     public ArrayList<Integer> arrCorrectlyGuessed = new ArrayList<>();
+    public long startTime = System.nanoTime();
 
     public void initialize(){
         this.getRandArray();
@@ -36,11 +46,18 @@ public class Task2 {
 
     public void showInfo() {
         App.showAlert(Alert.AlertType.INFORMATION, "Before you begin", "About this mode", "The aim of this mode is to guess the 10 numbers randomly generated between 1 and 100 as fast as you can. Click okay to start the clock!");
-        startClock();
+        clock();
     }
 
-  public void startClock(){}
-
+  public void clock(){  //needs formatting
+      final Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1000), event -> {
+          long timeTaken = TimeUnit.MINUTES.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS);
+          time.setText(String.valueOf(timeTaken));
+          time.setTextAlignment(TextAlignment.CENTER);
+      }));
+      timeline.setCycleCount(Animation.INDEFINITE);
+      timeline.play();
+  }
 
     @FXML
     public void checkInArr(ActionEvent ae) {

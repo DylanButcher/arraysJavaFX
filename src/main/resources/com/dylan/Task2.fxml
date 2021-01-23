@@ -24,5 +24,6 @@
       <Text layoutX="17.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correctly Guessed" />
       <Text fx:id="guessed" layoutX="17.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="343.9453125" />
       <JFXButton layoutX="14.0" layoutY="361.0" onAction="#back" text="Back" />
+      <Text fx:id="time" layoutX="150.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.0" />
    </children>
 </AnchorPane>
