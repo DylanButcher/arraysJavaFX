@@ -7,8 +7,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
-
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.*;
@@ -64,7 +62,6 @@ public class Task1 {
                 App.showAlert(Alert.AlertType.ERROR, "You've encountered an Error", "Error exporting file", "Could not save file");
             }
         }
-
     }
 
     @FXML

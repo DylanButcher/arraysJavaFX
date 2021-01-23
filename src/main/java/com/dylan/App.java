@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-
 import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -17,7 +16,7 @@ import java.io.IOException;
 public class App extends Application {
 
     static Stage stage;
-     static MediaPlayer mediaPlayer;
+    static MediaPlayer mediaPlayer;
     private static Scene scene;
 
     public App() {
@@ -39,9 +38,9 @@ public class App extends Application {
 
     public static Media getMedia(String fileName) {
         Media media = null;
-        try{
-           media = new Media(App.class.getResource(fileName).toString());
-        }catch (Exception ex){
+        try {
+            media = new Media(App.class.getResource(fileName).toString());
+        } catch (Exception ex) {
             System.out.println("Error playing media");
         }
         return media;
@@ -49,7 +48,7 @@ public class App extends Application {
 
     public void startMusic() {
         mediaPlayer.setAutoPlay(true);
-        mediaPlayer.seek(Duration.ZERO);
+        mediaPlayer.seek(Duration.INDEFINITE);
     }
 
     static void controlMusic(boolean play) {

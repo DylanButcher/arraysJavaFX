@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -27,7 +26,16 @@ public class Task2 {
 
     public Task2() {
         this.getRandArray();
+        showInfo();
     }
+
+    public void showInfo() {
+        App.showAlert(Alert.AlertType.INFORMATION, "Before you begin", "About this mode", "The aim of this mode is to guess the 10 numbers randomly generated between 1 and 100 as fast as you can. Click okay to start the clock!");
+        startClock();
+    }
+
+  public void startClock(){}
+
 
     @FXML
     public void checkInArr(ActionEvent ae) {
@@ -53,7 +61,7 @@ public class Task2 {
                 guessed.setTextAlignment(TextAlignment.LEFT);
                 if (arrCorrectlyGuessed.size() == 10) {
                     App.showAlert(Alert.AlertType.INFORMATION, "Congratulations!", "You've won", "You guessed all 10 numbers well done!");
-                    App.setRoot("Menu");
+                    App.setRoot("Task3");
                 }
             }
         } catch (Exception ex) {
@@ -69,16 +77,14 @@ public class Task2 {
     public void getRandArray() {
         arrToGuess.clear();
         Random random = new Random();
-        do{
-            int randomNum = random.nextInt(100)+1;
-            System.out.println(arrToGuess.toString());
+        do {
+            int randomNum = random.nextInt(100) + 1;
             if (arrToGuess.contains(randomNum)) {
-                System.out.println(randomNum);
                 getRandArray();
             } else {
                 arrToGuess.add(randomNum);
             }
-        }while(arrToGuess.size()!=10);
+        } while (arrToGuess.size() != 10);
     }
 
     @FXML
