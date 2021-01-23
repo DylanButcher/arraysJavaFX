@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
@@ -25,6 +26,14 @@ public class Task1 {
     Text showArrays;
     @FXML
     JFXTextField entries;
+    @FXML
+    AnchorPane background;
+
+
+
+    public void initialize(){
+        background.setStyle("-fx-background-color: "+App.backgroundColour);
+    }
 
     public ArrayList<Integer> list = new ArrayList<>();
 

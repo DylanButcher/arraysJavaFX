@@ -1,18 +1,16 @@
 package com.dylan;
 
-import com.jfoenix.controls.JFXToggleButton;
 import javafx.fxml.FXML;
+import javafx.scene.layout.AnchorPane;
 
 
 public class Menu {
 
     @FXML
-    JFXToggleButton radio = new JFXToggleButton();
-    public void initialize() {
-        selectRadio();
-    }
-    public void selectRadio() {
-        radio.setSelected(!App.mediaPlayer.isMute());
+    AnchorPane background;
+
+    public void initialize(){
+        background.setStyle("-fx-background-color: "+App.backgroundColour);
     }
 
     @FXML
@@ -31,8 +29,9 @@ public class Menu {
     }
 
     @FXML
-    public void musicToggle() {
-        App.controlMusic(radio.isSelected());
+    public void goSettings() throws Exception{
+        App.setRoot("Settings");
     }
+
 
 }

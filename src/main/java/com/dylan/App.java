@@ -18,10 +18,16 @@ public class App extends Application {
     static Stage stage;
     static MediaPlayer mediaPlayer;
     private static Scene scene;
+    static String backgroundColour;
 
     public App() {
+        backgroundColour = "#FFFFFF";
         mediaPlayer = new MediaPlayer(getMedia("backgroundTune.mp3"));
         startMusic();
+    }
+
+    static String getBackgroundColour(){
+        return "-fx-background-color: "+backgroundColour;
     }
 
     @Override
@@ -48,7 +54,7 @@ public class App extends Application {
 
     public void startMusic() {
         mediaPlayer.setAutoPlay(true);
-        mediaPlayer.seek(Duration.INDEFINITE);
+        mediaPlayer.seek(Duration.ZERO);
     }
 
     static void controlMusic(boolean play) {

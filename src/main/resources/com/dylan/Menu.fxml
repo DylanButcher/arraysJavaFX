@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dylan.Menu">
+<AnchorPane fx:id="background" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dylan.Menu">
    <children>
       <Text layoutX="45.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrays Tasks">
          <font>
@@ -15,7 +14,7 @@
       </Text>
       <JFXButton layoutX="150.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#goTask1" prefHeight="30.0" prefWidth="100.0" text="Number Info" />
       <JFXButton layoutX="125.0" layoutY="151.0" minWidth="-Infinity" onAction="#goTask2" prefHeight="30.0" prefWidth="150.0" text="Guess the Number" />
-      <JFXToggleButton fx:id="radio" layoutX="284.0" layoutY="328.0" onAction="#musicToggle" text="Music" />
       <JFXButton layoutX="14.0" layoutY="357.0" onAction="#brexit" text="Exit" />
+      <JFXButton layoutX="337.0" layoutY="357.0" onAction="#goSettings" text="Settings" />
    </children>
 </AnchorPane>

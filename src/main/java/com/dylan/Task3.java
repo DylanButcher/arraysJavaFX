@@ -3,6 +3,7 @@ package com.dylan;
 import javafx.fxml.FXML;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.util.Duration;
 
 public class Task3 {
 
@@ -17,6 +18,7 @@ public class Task3 {
         mp = new MediaPlayer(App.getMedia("dance.mp4"));
         video.setMediaPlayer(mp);
         mp.setAutoPlay(true);
+        mp.seek(Duration.ZERO);
     }
 
 

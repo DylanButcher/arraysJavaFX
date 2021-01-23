@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import java.util.ArrayList;
@@ -19,14 +20,18 @@ public class Task2 {
     Text tried;
     @FXML
     Text guessed;
+    @FXML
+    AnchorPane background;
+
 
     public ArrayList<Integer> arrToGuess = new ArrayList<>();
     public ArrayList<Integer> arrTried = new ArrayList<>();
     public ArrayList<Integer> arrCorrectlyGuessed = new ArrayList<>();
 
-    public Task2() {
+    public void initialize(){
         this.getRandArray();
         showInfo();
+        background.setStyle(App.getBackgroundColour());
     }
 
     public void showInfo() {
