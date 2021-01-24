@@ -14,8 +14,9 @@
             <Font name="Comic Sans MS" size="50.0" />
          </font>
       </Text>
-      <JFXToggleButton fx:id="radio" layoutX="149.0" layoutY="90.0" onAction="#musicToggle" text="Music" />
-      <JFXColorPicker fx:id="colourWheel" layoutX="150.0" layoutY="148.0" onAction="#changeColour" />
+      <JFXToggleButton fx:id="radio" layoutX="149.0" layoutY="84.0" onAction="#musicToggle" text="Music" />
+      <JFXColorPicker fx:id="colourWheel" layoutX="150.0" layoutY="190.0" onAction="#changeColour" />
       <JFXButton layoutX="14.0" layoutY="361.0" onAction="#back" text="Back" />
+      <Text layoutX="149.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Background Colour" textAlignment="CENTER" underline="true" />
    </children>
 </AnchorPane>

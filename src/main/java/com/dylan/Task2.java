@@ -37,6 +37,7 @@ public class Task2 {
     public ArrayList<Integer> arrTried = new ArrayList<>();
     public ArrayList<Integer> arrCorrectlyGuessed = new ArrayList<>();
     public long startTime = System.nanoTime();
+    public Timeline timeline;
 
     public void initialize(){
         this.getRandArray();
@@ -49,10 +50,12 @@ public class Task2 {
         clock();
     }
 
-  public void clock(){  //needs formatting
-      final Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1000), event -> {
-          long timeTaken = TimeUnit.MINUTES.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS);
-          time.setText(String.valueOf(timeTaken));
+  public void clock(){
+      timeline = new Timeline(new KeyFrame(Duration.millis(1000), event -> {
+          long totalTime = TimeUnit.SECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS);
+          long minutes = (totalTime%3600)/60;
+          long secondsSeconds = totalTime %60;
+          time.setText(minutes + ":" + String.format("%02d", secondsSeconds));
           time.setTextAlignment(TextAlignment.CENTER);
       }));
       timeline.setCycleCount(Animation.INDEFINITE);
@@ -82,7 +85,8 @@ public class Task2 {
                 guessed.setText(arrCorrectlyGuessed.toString());
                 guessed.setTextAlignment(TextAlignment.LEFT);
                 if (arrCorrectlyGuessed.size() == 10) {
-                    App.showAlert(Alert.AlertType.INFORMATION, "Congratulations!", "You've won", "You guessed all 10 numbers well done!");
+                    timeline.stop();
+                    App.showAlert(Alert.AlertType.INFORMATION, "Congratulations!", "You've won", "You guessed all 10 numbers well done!\nIt took you "+time.getText());
                     App.setRoot("Task3");
                 }
             }
@@ -107,6 +111,7 @@ public class Task2 {
                 arrToGuess.add(randomNum);
             }
         } while (arrToGuess.size() != 10);
+        System.out.println(arrToGuess.toString());
     }
 
     @FXML
